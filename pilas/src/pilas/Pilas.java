@@ -12,17 +12,20 @@ public class Pilas {
         p1.push(4);
         p1.mostrarPila();
         
-      /*  
+        p2.push(1);
+        p2.push(2);
+        p2.push(3);
+        p2.push(4);
+        p2.mostrarPila();
+         
         p1.invierteSimple() ;
         System.out.println("Método con invierte simple: ");
         p1.mostrarPila();
-        
-        p1.invierteEficiente();
+          
+        p2.invierteEficiente();
         System.out.println("Método con invierte eficiente: ");
-        p1.mostrarPila();
-      */
-       
-       
+        p2.mostrarPila();
+      
         /*for (int i = 0; i < 4; i++) {
             p2.push(p1.verTope());
             p1.pop();

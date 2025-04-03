@@ -88,17 +88,16 @@ public class Pila {
     public void invierteEficiente() {
         Pila aux = new Pila(tam);
         int copia;
-
-        // Pasar elementos de la pila original a aux
-        while (!pilaVacia()) {
-            copia = pop(); // Guardamos temporalmente el valor
-            aux.push(copia);
+        
+        while(!pilaVacia()){
+        copia = pop();
+        aux.push(copia);
+        }
+        
+        while(!aux.pilaVacia()){
+        push(aux.pop());
         }
 
-        // Pasar de aux a la pila original (queda invertida)
-        while (!aux.pilaVacia()) {
-            push(aux.pop());
-        }
     }
 }
 
