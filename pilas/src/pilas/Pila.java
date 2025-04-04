@@ -54,20 +54,19 @@ public class Pila {
     public void mostrarPila() {
         Pila paux = new Pila(tam);
         while (!pilaVacia()) {
-            System.out.print(verTope()+" ");
+            System.out.print(verTope() + " ");
             paux.push(this.pop());
         }
         System.out.println("");
-        while (!paux.pilaVacia()) {            
+        while (!paux.pilaVacia()) {
             push(paux.pop());
         }
     }
-    
-       // Método invierteSimple (Usando 2 pilas auxiliares)
+
+    // Método invierteSimple (Usando 2 pilas auxiliares)
     public void invierteSimple() {
         Pila aux1 = new Pila(tam);
         Pila aux2 = new Pila(tam);
-        
 
         // Pasar de la pila original a aux1
         while (!pilaVacia()) {
@@ -83,21 +82,21 @@ public class Pila {
         while (!aux2.pilaVacia()) {
             push(aux2.pop());
         }
-    }  
-    //  Método invierteEficiente (Usando solo 1 pila auxiliar y 1 variable)
+    }
+
     public void invierteEficiente() {
         Pila aux = new Pila(tam);
         int copia;
-        
-        while(!pilaVacia()){
-        copia = pop();
-        aux.push(copia);
-        }
-        
-        while(!aux.pilaVacia()){
-        push(aux.pop());
-        }
 
+        while (!pilaVacia()) {
+            aux.push(pop()); // Mover los elementos a la pila auxiliar
+        }
+        
+        while (!aux.pilaVacia()) {
+            copia = aux.getTope() + 1;
+            push(copia);
+            aux.pop();
+        }
+       
     }
 }
-
